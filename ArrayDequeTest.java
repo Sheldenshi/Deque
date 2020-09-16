@@ -82,10 +82,61 @@ public class ArrayDequeTest {
 
     }
 
+    public static void addRemoveTest2() {
+
+        System.out.println("Running add/remove test.");
+
+
+        ArrayDeque<Integer> ad1 = new ArrayDeque<>();
+        // should be empty
+        boolean passed = checkEmpty(true, ad1.isEmpty());
+
+        ad1.addLast(0);
+        ad1.addLast(1);
+        System.out.println("remove first " + ad1.removeFirst());
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        System.out.println("get(1) "+ ad1.get(1));
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        ad1.addFirst(3);
+
+        ad1.removeFirst();
+        ad1.removeFirst();
+        ad1.removeFirst();
+        ad1.removeFirst();
+        ad1.removeFirst();
+        ad1.removeFirst();
+        ad1.removeFirst();
+
+        ad1.addFirst(4);
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        ad1.addFirst(3);
+        ad1.addFirst(3);
+        ad1.addFirst(4);
+        ad1.removeLast();
+        ad1.removeLast();
+        ad1.removeLast();
+        ad1.removeLast();
+        ad1.removeLast();
+        ad1.removeLast();
+
+
+
+
+        printTestStatus(passed);
+
+    }
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
         addIsEmptySizeTest();
         addRemoveTest();
+        addRemoveTest2();
     }
 }
 
